@@ -1,8 +1,6 @@
 package exercises.codesignalcontainer;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.PriorityQueue;
+import java.util.*;
 
 /**
  * A container of integers that should support
@@ -58,6 +56,19 @@ public class ContainerImpl implements Container {
             return median;
         } catch (Exception ex) {
             throw new UnsupportedOperationException();
+        }
+    }
+
+    public static void main(String[] args) {
+        String[] strings = new String[]{
+                "abD", "aB", "ABC", "cDe", "CDd"
+        };
+
+        List<String> list = Arrays.asList(strings);
+
+        Collections.sort(list, String::compareToIgnoreCase);
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i));
         }
     }
 }
